@@ -1,0 +1,2 @@
+module PokeStrugglesHelper
+end
