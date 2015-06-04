@@ -15,4 +15,9 @@ class TrainersController < ApplicationController
       render json: { error: error.message }, status 422
     end
   end
+
+  def time
+    time.strftime("%B %-d, %Y, %H:%M:%S")
+
+
 end
