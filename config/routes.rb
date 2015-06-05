@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 get'/trainers', to: 'trainers#index'
 post'trainers/create', to: 'trainers#create'
 # put '/trainers/:name', to: 'trainers#update'
-# root 'trainers#index'
+root 'trainers#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
