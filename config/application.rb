@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module PokeStruggle
   class Application < Rails::Application
+
     config.action_dispatch.default_headers = {
       'Access-Control-Allow-Origin'   => '*',
       'Access-Control-Allow-Methods'  => 'POST, PUT, DELETE, GET, OPTIONS',

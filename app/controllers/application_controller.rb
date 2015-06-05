@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
   skip_before_action :verify_authenticity_token
 
-  def not_found
+  def skip_cors
    render json: { message: 'Requested route not found' }, status: 404
- end
+  end
 end
 
