@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 get'/trainers', to: 'trainers#index'
-post'/trainers/:create', to: 'trainers#create'
+post'/trainers', to: 'trainers#create'
+#possibly create a method that shows the entire room
 
 # put '/trainers/:name', to: 'trainers#update'
 root 'trainers#index'
