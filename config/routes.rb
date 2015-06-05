@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 get'/trainers', to: 'trainers#index'
-post'trainers/create', to: 'trainers#create'
+post'/trainers/create', to: 'trainers#create'
+
 # put '/trainers/:name', to: 'trainers#update'
 root 'trainers#index'
   # The priority is based upon order of creation: first created -> highest priority.
@@ -57,4 +58,5 @@ root 'trainers#index'
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  match '*not_found_route', to: 'application#skip_cors', via: [:get, :post, :put, :delete]
 end
