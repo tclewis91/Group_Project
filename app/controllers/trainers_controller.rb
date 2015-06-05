@@ -13,9 +13,9 @@ class TrainersController < ApplicationController
 
   def create
     begin
-      poke_ball = Trainer.create(name: params(:name),message: params(:message),badge: params(:badge))
+      poke_ball = Trainer.create(name: params.fetch(:name), message: params.fetch(:message), badge: params.fetch(:badge))
       render json: poke_ball
-    rescue ActionController::ParameterMissing => error
+     rescue ActionController::ParameterMissing => error
       render json: { error: error.message }, status: 422
     end
   end
