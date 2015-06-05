@@ -30,15 +30,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# group :production do
+group :production do
 
-#   gem 'pg'
+  gem 'pg'
 
-#   gem 'puma'
+  gem 'puma'
 
-#   gem 'rails_12factor'
+  gem 'rails_12factor'
 
-# end
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
