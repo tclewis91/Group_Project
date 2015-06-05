@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-get'/trainers', to: 'trainers#index'
+get'/trainers/', to: 'trainers#index'
 post'trainers/', to: 'trainers#create'
 put '/trainers/:name', to: 'trainers#update'
 root 'trainers#index'
