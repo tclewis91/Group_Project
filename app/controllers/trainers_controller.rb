@@ -14,7 +14,7 @@ class TrainersController < ApplicationController
 # rescue ActionController::RecordNotFound => error
 #       render json: { error: error.message }, status: 400
 #     end
-  end
+  # end
 
 
  def show #if you need to find a
