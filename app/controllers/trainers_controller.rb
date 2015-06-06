@@ -1,20 +1,18 @@
 class TrainersController < ApplicationController
   # def index
   #   render json: Trainer.all
-  # def time
-  #   time.now = time.strftime("%B %-d, %Y, %H:%M:%S")
-  # end
+  def time
+    Time.now = time.strftime("%B %-d, %Y, %H:%M:%S")
+  end
 
   def index #homepage
-    Trainer.all.select
+    begin
+  clear_now = Trainer.all.select { |trainer| trainer.created_at > (Time.now - 300) }
+  render json: clear_now
+rescue ActionController::RecordNotFound => error
+      render json: { error: error.message }, status: 400
+    end
   end
-    # begin
-  # clear_board = Trainer.all.select { |trainer| trainer.created_at > (time.now - 300) }
-  # render json: Trainer.clear_board
-# rescue ActionController::RecordNotFound => error
-#       render json: { error: error.message }, status: 400
-#     end
-  # end
 
 
  def show #if you need to find a
