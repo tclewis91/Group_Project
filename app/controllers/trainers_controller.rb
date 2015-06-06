@@ -7,10 +7,12 @@ class TrainersController < ApplicationController
 
 
 
-      def index #homepage
+  def index #homepage
     clear_board = Trainer.all.select{ |trainer| trainer.created_at > (time.now - 300) }
-    render json: Trainer.where(created_at: clear_board).order(created_at: :dsc)
-    end
+    render json: Trainer.clear_board
+
+    # .order(created_at: :dsc)
+    # end
   end
 
 
