@@ -2,7 +2,7 @@ class TrainersController < ApplicationController
   # def index
   #   render json: Trainer.all
   def time
-    Time.now = time.strftime("%B %-d, %Y, %H:%M:%S")
+    Time.now = time.strftime("%B %-d, %Y, %H:%M")
   end
 
   def index #homepage
