@@ -8,8 +8,8 @@ class TrainersController < ApplicationController
 
 
   def index #homepage
-    clear_board = Trainer.all.select{ |trainer| trainer.created_at > (time.now - 300) }
-    render json: Trainer.clear_board
+   render json: Trainer.all.select{ |trainer| trainer.created_at > (time.now - 300) }
+    # render json: Trainer.clear_board
 
     # .order(created_at: :dsc)
     # end
