@@ -19,7 +19,7 @@ class TrainersController < ApplicationController
   end
 
   def trainer_search #if you need to find a specific user
-    render json: Trainer.where(name: params.fetch(:name))
+    render json: Trainer.where(name: params[:name])
   end
 
   def recent_trainers #shows users from past 4 hours
