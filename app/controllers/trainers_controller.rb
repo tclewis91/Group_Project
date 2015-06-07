@@ -18,6 +18,10 @@ class TrainersController < ApplicationController
     end
   end
 
+  def trainer_search #if you need to find a specific user
+    render json: Trainer.where(name: params[:name])
+  end
+
   def recent_trainers #shows users from past 4 hours
    begin
     time_limit = Trainer.all.select { |trainer| trainer.created_at > (Time.now - 14400) }
@@ -52,8 +56,13 @@ class TrainersController < ApplicationController
     end
   end
 
- # def show #if you need to find a specific user
- #    render json: Trainer.find(params[:name])
- #  end
+  def cussing
+    @censored_message = params.fetch(:message)
+    @censored_message.gsub!(/shit/, 'beep')
+    @censored_message.gsub!(/ass/, 'beep')
+    @censored_message.gsub!(/bitch\b/, 'beep')
+    @censored_message.gsub!(/fuch/, 'beep')
+  end
+
 end
 
