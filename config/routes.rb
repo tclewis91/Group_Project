@@ -3,6 +3,7 @@ get'/trainers', to: 'trainers#index'
 post'/trainers', to: 'trainers#create'
 get'/trainers/leaderboard', to: 'trainers#top_trainers'
 get'/trainers/leaderboard/boards', to: 'trainers#top_message_board'
+get'/trainers/leaderboard/users', to: 'trainers#recent_trainers'
 #possibly create a method that shows the entire room
 
 # put '/trainers/:name', to: 'trainers#update'

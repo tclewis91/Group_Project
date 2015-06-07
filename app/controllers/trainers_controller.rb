@@ -18,6 +18,19 @@ class TrainersController < ApplicationController
     end
   end
 
+  def recent_trainers #shows users from past 4 hours
+   begin
+    time_limit = Trainer.all.select { |trainer| trainer.created_at > (Time.now - 14400) }
+    active_trainers = time_limit.group_by { |row| row.name }
+                                .sort_by { |key, value| value.count}
+                                .map { |row| row.first}
+    render json: active_trainers
+    rescue ActionController::RecordNotFound => error
+      render json: { error: error.message }, status: 400
+    end
+  end
+
+
   def top_trainers# shows top 10 users
     begin
       count_top_trainers = Trainer.all.group_by { |row| row.name }
@@ -30,14 +43,18 @@ class TrainersController < ApplicationController
   end
 
   def top_message_board#shows most used chatrooms
-    count_top_boards = Trainer.all.group_by { |row| row.badge}
-                              .sort_by { |key, value| value.count}
-                              .reverse.take(151).map { |row| row.first}
-    render json: count_top_boards
+    begin
+      count_top_boards = Trainer.all.group_by { |row| row.badge}
+                                .sort_by { |key, value| value.count}
+                                .reverse.take(151).map { |row| row.first}
+      render json: count_top_boards
+    rescue ActionController::RecordNotFound => error
+      render json: { error: error.message }, status: 400
+    end
   end
 
- def show #if you need to find a specific user
-    render json: Trainer.find(params[:name])
-  end
+ # def show #if you need to find a specific user
+ #    render json: Trainer.find(params[:name])
+ #  end
 end
 
