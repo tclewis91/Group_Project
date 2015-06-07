@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
+get'/trainers/:name', to: 'trainers#trainer_search'
 get'/trainers', to: 'trainers#index'
 post'/trainers', to: 'trainers#create'
+
+
 get'/trainers/leaderboard', to: 'trainers#top_trainers'
 get'/trainers/leaderboard/boards', to: 'trainers#top_message_board'
 get'/trainers/leaderboard/users', to: 'trainers#recent_trainers'
-post'/trainers/leaderboard/search', to: 'trainers#trainer_search'
-#possibly create a method that shows the entire room
 
-# put '/trainers/:name', to: 'trainers#update'
 root 'trainers#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
