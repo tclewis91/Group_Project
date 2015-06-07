@@ -11,7 +11,7 @@ class TrainersController < ApplicationController
 
   def create #creates new user
     begin
-      poke_ball = Trainer.create(name: params.fetch(:name), message: params.fetch(:message), badge: params.fetch(:badge))
+      poke_ball = Trainer.create(name: params.fetch(:name), message: @cuss_words, badge: params.fetch(:badge))
       render json: poke_ball
     rescue ActionController::ParameterMissing => error
       render json: { error: error.message }, status: 422
@@ -29,7 +29,6 @@ class TrainersController < ApplicationController
       render json: { error: error.message }, status: 400
     end
   end
-
 
   def top_trainers# shows top 10 users
     begin
@@ -51,6 +50,14 @@ class TrainersController < ApplicationController
     rescue ActionController::RecordNotFound => error
       render json: { error: error.message }, status: 400
     end
+  end
+
+  def cussing
+    @cuss_words = params[:message]
+    @cuss_words.gsub!(/ass/, '🍪ss')
+    @cuss_words.gsub!(/shit/, 's🍪🍪t')
+    @cuss_words.gsub!(/fuck/, 'f🍪🍪k')
+    @cuss_words.gsub!(/damn/, 'd🍪🍪n')
   end
 
  # def show #if you need to find a specific user
