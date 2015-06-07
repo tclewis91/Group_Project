@@ -52,13 +52,13 @@ class TrainersController < ApplicationController
     end
   end
 
-  def cussing
-    @cuss_words = params[:message]
-    @cuss_words.gsub!(/ass/, '🍪ss')
-    @cuss_words.gsub!(/shit/, 's🍪🍪t')
-    @cuss_words.gsub!(/fuck/, 'f🍪🍪k')
-    @cuss_words.gsub!(/damn/, 'd🍪🍪n')
-  end
+  # def cussing
+  #   @cuss_words = params[:message]
+  #   @cuss_words.gsub!(/ass/, '🍪ss')
+  #   @cuss_words.gsub!(/shit/, 's🍪🍪t')
+  #   @cuss_words.gsub!(/fuck/, 'f🍪🍪k')
+  #   @cuss_words.gsub!(/damn/, 'd🍪🍪n')
+  # end
 
  # def show #if you need to find a specific user
  #    render json: Trainer.find(params[:name])
