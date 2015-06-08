@@ -55,14 +55,5 @@ class TrainersController < ApplicationController
       render json: { error: error.message }, status: 400
     end
   end
-
-  def cussing
-    @censored_message = params.fetch(:message)
-    @censored_message.gsub!(/shit/, 'beep')
-    @censored_message.gsub!(/ass/, 'beep')
-    @censored_message.gsub!(/bitch\b/, 'beep')
-    @censored_message.gsub!(/fuch/, 'beep')
-  end
-
 end
 
