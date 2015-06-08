@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-get'/trainers/:name', to: 'trainers#trainer_search'
+# get'/trainers/:name', to: 'trainers#trainer_search'
 get'/trainers', to: 'trainers#index'
 post'/trainers', to: 'trainers#create'
 
