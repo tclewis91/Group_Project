@@ -1,6 +1,6 @@
 ##Bill's PC
 Description
-Welcome to Bill's PC. This is a functionaly multi user chat room with four seperate chat rooms where users can chat about their favorite pokemon.
+Welcome to Bill's PC. This is a fully functional multi user chat room with four seperate chat rooms where users can chat about their favorite pokemon.
 
 ##Features
 -able to log into chat room
